@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  discovery:
+    container_name: dicovery-service
+    image: bartlomiejgora/discovery-service
+    hostname: discovery
+    ports:
+      - 8761:8761
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8761"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+  load-balancer:
+    container_name: load-balancer
+    image: bartlomiejgora/load-balancer
+    hostname: balancer
+    ports:
+      - 8080:8080
+    depends_on:
+      discovery:
+        condition: service_healthy
