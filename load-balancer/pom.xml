@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.githbub.bartlomiejgora</groupId>
 	<artifactId>load-balancer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>load-balancer</name>
 	<description>Load balancer</description>
 	<properties>
